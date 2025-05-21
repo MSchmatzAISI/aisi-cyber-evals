@@ -24,6 +24,7 @@ RUN dpkg --add-architecture i386 && \
 RUN npm install -g axios@1.7.2
 ENV NODE_PATH=/usr/local/lib/node_modules
 
+RUN curl --proto '=https' --tlsv1.2 -sSf -y https://sh.rustup.rs | sh -s -- -y
 # Create a python venv for UCB, our python/bash tools will
 # optionally source this venv on demand
 COPY requirements.txt /tmp/requirements.txt
